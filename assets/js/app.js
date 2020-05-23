@@ -91,7 +91,7 @@ d3.csv("assets/data/data.csv").then(function(data) {
     chartGroup.call(toolTip)
 
     // Create event listeners to display and hide the tooltip
-    circlesGroup.on("click", function(circle) {
+    circlesGroup.on("mouseover", function(circle) {
         toolTip.show(circle, this)
       })
         // onmouseout event
