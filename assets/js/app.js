@@ -82,7 +82,7 @@ d3.csv("assets/data/data.csv").then(function(data) {
       .attr("class", "d3-tip")
       .offset([80, -60])
       .html(function(d) {
-        return (`${d.state}<br>Median Age: ${d.age}<br>% who Smoke: ${d.smokes}`)
+        return (`${d.state}<br>Median Age: ${d.age}<br>Smokes: ${d.smokes}%`)
       })
 
     // Create tooltip in the chart

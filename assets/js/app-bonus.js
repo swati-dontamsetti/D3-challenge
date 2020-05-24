@@ -122,7 +122,7 @@ function getData() {
       .attr("value", "poverty")
       .classed("inactive", true)
       .classed("aText", true)
-      .text("Poverty (%)")
+      .text("In Poverty (%)")
 
     var incomeLabel = xAxisLabel.append("text")
       .attr("x", 0)
@@ -160,7 +160,7 @@ function getData() {
       .attr("value", "obesity")
       .classed("inactive", true)
       .classed("aText", true)
-      .text("Obesity (%)")
+      .text("Obese (%)")
     
     // tool tip for base chart
     circlesGroup = updateToolTip(currentX, currentY, circlesGroup)
@@ -305,18 +305,18 @@ function updateToolTip(currentX, currentY, circlesGroup){
   var yLabel = ""
 
   if (currentX === "poverty") {
-    xLabel = "% in Poverty: "
+    xLabel = "Poverty: "
   } else if (currentX === 'age') {
-    xLabel = 'Median Age: '
+    xLabel = 'Age: '
   } else {
-    xLabel = 'Household Income: $'
+    xLabel = 'Income: $'
   }
   if (currentY === 'healthcare') {
-    yLabel = '% Lack Healthcare: '
+    yLabel = 'Lack Care: '
   } else if (currentY === 'smokes') {
-    yLabel = '% who Smoke: '
+    yLabel = 'Smokes: '
   } else {
-    yLabel = '% Obese: '
+    yLabel = 'Obesity: '
   }
 
   var toolTip = d3.tip()
@@ -325,13 +325,13 @@ function updateToolTip(currentX, currentY, circlesGroup){
     .html(function(d) {
       if (currentY === 'smokes' || currentY === 'obesity') {
         if (currentX === 'poverty') {
-          return `${d.state}<br>${xLabel}${d[currentX]}<br>${yLabel}${d[currentY]}`
+          return `${d.state}<br>${xLabel}${d[currentX]}%<br>${yLabel}${d[currentY]}%`
         }
-        return `${d.state}<br>${xLabel}${d[currentX]}<br>${yLabel}${d[currentY]}`
+        return `${d.state}<br>${xLabel}${d[currentX]}<br>${yLabel}${d[currentY]}%`
       } else if (currentX === 'poverty') {
-        return `${d.state}<br>${xLabel}${d[currentX]}<br>${yLabel}${d[currentY]}`
+        return `${d.state}<br>${xLabel}${d[currentX]}%<br>${yLabel}${d[currentY]}%`
       } else {
-        return `${d.state}<br>${xLabel}${d[currentX]}<br>${yLabel}${d[currentY]}`
+        return `${d.state}<br>${xLabel}${d[currentX]}<br>${yLabel}${d[currentY]}%`
       }
     })
 
