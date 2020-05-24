@@ -32,7 +32,7 @@ Using the D3 techniques we taught you in class, create a scatter plot that repre
 
 While the ticks on the axes allow us to infer approximate values for each circle, it's impossible to determine the true value without adding another layer of data. Enter tooltips: developers can implement these in their D3 graphics to reveal a specific element's data when the user hovers their cursor over the element. Add tooltips to your circles and display each tooltip with the data that the user has selected.
 
-### Bonus: Impress the Boss (Optional Assignment)
+### Bonus: Impress the Boss
 
 Why make a static graphic when D3 lets you interact with your data?
 
