@@ -32,8 +32,6 @@ d3.csv("assets/data/data.csv").then(function(data) {
         item.smokes = +item.smokes
     })
 
-    console.log(data)
-
     // Create scale functions
     var xScale = d3.scaleLinear()
         .domain([30, d3.max(data, d => d.age)])
@@ -43,7 +41,7 @@ d3.csv("assets/data/data.csv").then(function(data) {
     var yScale = d3.scaleLinear()
         .domain([8, d3.max(data, d => d.smokes)])
         .range([height, 0])
-        .nice() //cleans up axis ticks
+        .nice()
     
     // Create axis functions
     var bottomAxis = d3.axisBottom(xScale)
@@ -96,7 +94,7 @@ d3.csv("assets/data/data.csv").then(function(data) {
       })
         // onmouseout event
         .on("mouseout", function(circle, index) {
-          toolTip.hide(data);
+          toolTip.hide(circle, this);
         })
 
     // Create axes labels
